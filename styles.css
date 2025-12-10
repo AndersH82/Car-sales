@@ -109,3 +109,94 @@ button:hover {
     }
     .nav-toggle { display: block; }
 }
+
+/* Latest Cars section */
+.latest-cars {
+    max-width: 1100px;
+    margin: 36px auto;
+    padding: 0 20px;
+    text-align: center; /* center section heading and fallback text */
+}
+.latest-cars h2 {
+    color: #007acc;
+    margin: 0 0 12px;
+}
+.cars-grid {
+    display: grid;
+    /* Vertical / single-column layout by default */
+    grid-template-columns: 1fr;
+    gap: 18px;
+    justify-items: center; /* center card(s) horizontally */
+}
+.car-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 760px; /* keep cards centered and reasonably wide */
+}
+.car-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+.car-card .card-body {
+    padding: 12px 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center card content horizontally */
+    text-align: center;
+}
+.car-card .title {
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: #222;
+    font-size: 16px;
+}
+.car-card .specs {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.car-card .price-area {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column; /* stack price and CTA vertically */
+    align-items: center; /* center price and CTA */
+    gap: 8px;
+}
+.car-card .amount {
+    font-weight: 700;
+    color: #007acc;
+}
+.car-card .btn {
+    padding: 10px 12px;
+    background: #007acc;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    width: 90%; /* slightly inset full-width feel while centered */
+    max-width: 320px;
+    text-align: center;
+}
+.car-card .btn:hover { background: #005f99; }
+
+/* Responsive grid */
+/* Keep single-column across breakpoints for a vertical list
+   but allow small adjustments if needed */
+@media (min-width: 981px) {
+    /* optional: if you later want multi-column at very wide sizes,
+       change this rule. For now we keep vertical layout */
+}
+@media (max-width: 560px) {
+    .car-card img { height: 200px; }
+    .latest-cars { padding: 0 12px; }
+}
