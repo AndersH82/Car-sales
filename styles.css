@@ -25,3 +25,87 @@ button {
 button:hover {
     background: #005f99;
 }
+
+/* Navbar styles */
+.site-header {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+}
+.brand {
+    font-weight: 700;
+    color: #007acc;
+    text-decoration: none;
+    font-size: 20px;
+}
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 18px;
+}
+.nav-list a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+.nav-list a:hover {
+    background: rgba(0,122,204,0.08);
+}
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+.hamburger {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #333;
+    position: relative;
+}
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 2px;
+    background: #333;
+}
+.hamburger::before { top: -7px; }
+.hamburger::after { top: 7px; }
+
+/* Mobile styles */
+@media (max-width: 720px) {
+    .nav-list {
+        position: absolute;
+        right: 20px;
+        top: 64px;
+        flex-direction: column;
+        background: white;
+        padding: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        border-radius: 8px;
+        display: none;
+    }
+    .nav-list.show {
+        display: flex;
+    }
+    .nav-toggle { display: block; }
+}
