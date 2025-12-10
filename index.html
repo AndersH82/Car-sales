@@ -1,70 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, innitial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, innitial-scale=1.0" />
     <title>Car Sales</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header class="site-header">
-        <nav class="navbar" role="navigation" aria-label="Main Navigation">
-            <a href="#" class="brand">CarSales</a>
-            <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menu">
-                <span class="hamburger"></span>
-            </button>
-            <ul id="primary-navigation" class="nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#inventory">Cars</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <a href="#" class="brand">CarSales</a>
+        <div class="nav-right">
+          <ul id="primary-navigation" class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#inventory">Cars</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <!-- logo: place a file named `logo.png` in the project root or update the path -->
+          <img src="logo.png" alt="CarSales logo" class="nav-logo" />
+          <button
+            class="nav-toggle"
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+            aria-label="Menu"
+          >
+            <span class="hamburger"></span>
+          </button>
+        </div>
+      </nav>
     </header>
     <h1>Car Sales</h1>
     <p>Here you can buy some new and old cars</p>
     <button id="BuyNow">Buy Now</button>
 
     <section class="latest-cars" id="inventory">
-        <h2>Latest Cars</h2>
-        <div class="cars-grid">
-            <article class="car-card">
-                <img src="car1.png" alt="Car Model 1">
-                <div class="card-body">
-                    <h3 class="title">Car Model 1</h3>
-                    <p class="specs">Automatic · 12,000 km · Petrol</p>
-                    <div class="price-area">
-                        <span class="amount">$20,000</span>
-                        <a class="btn" href="#contact">View</a>
-                    </div>
-                </div>
-            </article>
+      <h2>Latest Cars</h2>
+      <div class="cars-grid">
+        <article class="car-card">
+          <img src="car1.png" alt="Car Model 1" />
+          <div class="card-body">
+            <h3 class="title">Car Model 1</h3>
+            <p class="specs">Automatic · 12,000 km · Petrol</p>
+            <div class="price-area">
+              <span class="amount">$20,000</span>
+              <a class="btn" href="#contact">View</a>
+            </div>
+          </div>
+        </article>
 
-            <article class="car-card">
-                <img src="car2.png" alt="Car Model 2">
-                <div class="card-body">
-                    <h3 class="title">Car Model 2</h3>
-                    <p class="specs">Manual · 55,000 km · Diesel</p>
-                    <div class="price-area">
-                        <span class="amount">$25,000</span>
-                        <a class="btn" href="#contact">View</a>
-                    </div>
-                </div>
-            </article>
+        <article class="car-card">
+          <img src="car2.png" alt="Car Model 2" />
+          <div class="card-body">
+            <h3 class="title">Car Model 2</h3>
+            <p class="specs">Manual · 55,000 km · Diesel</p>
+            <div class="price-area">
+              <span class="amount">$25,000</span>
+              <a class="btn" href="#contact">View</a>
+            </div>
+          </div>
+        </article>
 
-            <article class="car-card">
-                <img src="car3.png" alt="Car Model 3">
-                <div class="card-body">
-                    <h3 class="title">Car Model 3</h3>
-                    <p class="specs">Automatic · 8,200 km · Electric</p>
-                    <div class="price-area">
-                        <span class="amount">$30,000</span>
-                        <a class="btn" href="#contact">View</a>
-                    </div>
-                </div>
-            </article>
-        </div>
+        <article class="car-card">
+          <img src="car3.png" alt="Car Model 3" />
+          <div class="card-body">
+            <h3 class="title">Car Model 3</h3>
+            <p class="specs">Automatic · 8,200 km · Electric</p>
+            <div class="price-area">
+              <span class="amount">$30,000</span>
+              <a class="btn" href="#contact">View</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
+
+    <!-- Modal for car details -->
+    <div
+      id="car-modal"
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="car-modal-title"
+    >
+      <div class="modal-overlay" data-close="true"></div>
+      <div class="modal-content" role="document">
+        <button class="modal-close" aria-label="Close">×</button>
+        <img class="modal-image" src="" alt="" />
+        <div class="modal-body">
+          <h3 id="car-modal-title"></h3>
+          <p class="modal-specs"></p>
+          <p class="modal-price"></p>
+          <a class="btn modal-contact" href="#contact">Contact Seller</a>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
