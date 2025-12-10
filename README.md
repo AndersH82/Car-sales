@@ -14,10 +14,17 @@ python -m http.server 8000; # then open http://localhost:8000
 
 ## Files
 
-- `index.html` — main page markup
-- `styles.css` — site styles
-- `script.js` — small interactive behaviors (Buy button and optional navbar toggles)
+- `index.html` — main page markup (includes navbar, latest cars and modal)
+- `styles.css` — site styles (navbar, latest cars cards, modal)
+- `script.js` — interactive behavior (Buy button, navbar toggle, modal handling)
+- `logo.png` — optional site logo (place in project root or update `index.html` path)
 - `README.md` — this file
+
+## Notes
+
+- The navbar includes a right-aligned logo placeholder: add `logo.png` to the project root or edit the `src` attribute in `index.html`.
+- Click a card's "View" button to open a modal with details; press Escape or click outside to close.
+
 
 ## Author
 

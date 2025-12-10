@@ -1,7 +1,10 @@
-// simple function
-document.getElementById("BuyNow").addEventListener("click", () => {
-    alert("Here you can buy new and old cars");
-})
+// simple function (guard in case element isn't present on the page)
+const buyNowBtn = document.getElementById("BuyNow");
+if (buyNowBtn) {
+    buyNowBtn.addEventListener("click", () => {
+        alert("Here you can buy new and old cars");
+    });
+}
 
 // Navbar toggle for mobile
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,6 +25,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 navToggle.setAttribute('aria-expanded', 'false');
             });
         });
+    }
+    // Set footer year if present
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Basic search filter for car listings (works on pages with #search)
+    const searchInput = document.getElementById('search');
+    if (searchInput) {
+        const filterCards = () => {
+            const q = searchInput.value.trim().toLowerCase();
+            document.querySelectorAll('.car-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = q === '' || text.includes(q) ? '' : 'none';
+            });
+        };
+        searchInput.addEventListener('input', filterCards);
+        // run once to apply any existing filter value
+        filterCards();
     }
 });
 
