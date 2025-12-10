@@ -270,6 +270,79 @@ button:hover {
     .modal-image { height: 220px; }
 }
 
+/* --- About page styles --- */
+/* Provide a common container used across pages */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.lead {
+    color: #555;
+    max-width: 720px;
+    margin: 0 auto 18px;
+    line-height: 1.5;
+}
+
+.about-intro {
+    display: flex;
+    gap: 18px;
+    margin: 28px auto;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+.about-intro .card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    flex: 1 1 320px;
+    min-width: 260px;
+    text-align: left;
+}
+.about-intro .card h2 { color: #007acc; margin-top: 0; }
+
+.team {
+    max-width: 1100px;
+    margin: 36px auto;
+    padding: 0 20px 10px;
+    text-align: center;
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+.team-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    padding: 12px;
+    text-align: center;
+}
+.team-card img { width: 100%; height: 160px; object-fit: cover; display: block; border-radius: 6px; }
+.team-card h3 { margin: 10px 0 6px; }
+.team-card p { color: #555; font-size: 14px; margin: 0; }
+
+.cta {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    padding: 22px;
+    margin: 32px auto;
+    text-align: center;
+}
+.cta .btn { margin-top: 12px; }
+
+@media (max-width: 720px) {
+    .about-intro { flex-direction: column; }
+    .lead { padding: 0 8px; }
+}
+
+
 #search {
     text-align: center;
     border-radius: 30px;
